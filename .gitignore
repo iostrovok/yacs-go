@@ -6,9 +6,8 @@
 *.dylib
 bin/*
 compere_files.txt
-./scripts/*
 scripts/*
-
+test_out/*
 
 # Test binary, build with `go test -c`
 *.test
