@@ -11,9 +11,10 @@ BUILD_DEPS := gopkg.in/check.v1 \
 
 GOBIN := $(CURDIR)/bin/
 EXE := $(GOBIN)/yacsgo
-GOPATH_ENV := $(GOPATH)
+# GOPATH_ENV := $(GOPATH)
+GOPATH_ENV := $(GOPATH):$(CURDIR)/go/
 
-ENV := GOPATH=$(GOPATH) GOBIN=$(GOBIN)
+ENV := GOPATH=$(GOPATH_ENV) GOBIN=$(GOBIN)
 
 export GOPATH=$(GOPATH_ENV)
 
@@ -50,7 +51,7 @@ build: clean
 	@echo "======================================================================"
 	@echo 'MAKE: build...'
 	mkdir -p $(GOBIN)
-	go build -o $(EXE) ./yacsgo.go
+	$(ENV) CGO_ENABLED=0 go build -o $(EXE) ./yacsgo.go
 
 
 # Build exe file and suppoting files
@@ -58,7 +59,7 @@ build-linux: clean
 	@echo "======================================================================"
 	@echo 'MAKE: build...'
 	mkdir -p $(GOBIN)
-	GOOS=linux go build -o $(EXE) ./yacsgo.go
+	$(ENV) CGO_ENABLED=0 GOOS=linux go build -o $(EXE) ./yacsgo.go
 
 
 # Full tests
