@@ -14,10 +14,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/iostrovok/yacs-go/diff"
-	"github.com/iostrovok/yacs-go/helper"
-	"github.com/iostrovok/yacs-go/loader"
-	"github.com/iostrovok/yacs-go/utils"
+	"github.com/iostrovok/yacs-go/yacs-go/diff"
+	"github.com/iostrovok/yacs-go/yacs-go/helper"
+	"github.com/iostrovok/yacs-go/yacs-go/loader"
+	"github.com/iostrovok/yacs-go/yacs-go/utils"
 )
 
 type container struct {
