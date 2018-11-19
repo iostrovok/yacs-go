@@ -5,7 +5,6 @@ import (
 	"reflect"
 	"sort"
 	"strconv"
-	// "loader"
 )
 
 // Diff is interface function for checking difference between 2 JSON objects

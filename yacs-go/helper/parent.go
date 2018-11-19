@@ -1,8 +1,6 @@
 package helper
 
 import (
-	// "fmt"
-
 	"myconst"
 	"utils"
 )

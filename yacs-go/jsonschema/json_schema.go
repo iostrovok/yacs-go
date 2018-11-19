@@ -38,8 +38,8 @@ import (
 
 	"github.com/xeipuuv/gojsonschema"
 
-	"myconst"
-	"utils"
+	"github.com/iostrovok/yacs-go/yacs-go/myconst"
+	"github.com/iostrovok/yacs-go/yacs-go/utils"
 )
 
 func joinErrors(errors []error) error {
