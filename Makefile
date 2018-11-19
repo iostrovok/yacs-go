@@ -10,7 +10,8 @@ BUILD_DEPS := gopkg.in/check.v1 \
 
 
 GOBIN := $(CURDIR)/bin/
-EXE := $(GOBIN)/yacsgo
+EXE_PARSER := $(GOBIN)/yacsgo
+EXE_SERVER := $(GOBIN)/server
 # GOPATH_ENV := $(GOPATH)
 GOPATH_ENV := $(GOPATH):$(CURDIR)/go/
 
@@ -35,7 +36,7 @@ linux: clean deps fmt lint test build-linux
 clean:
 	@echo "======================================================================"
 	@echo 'MAKE: clean: yacsgo...'
-	@rm -rf $(EXE)
+	@rm -rf $(EXE_PARSER) $(EXE_SERVER)
 	@rm -rf ./test_out ./test_tmp_checked
 
 
@@ -51,15 +52,16 @@ build: clean
 	@echo "======================================================================"
 	@echo 'MAKE: build...'
 	mkdir -p $(GOBIN)
-	$(ENV) CGO_ENABLED=0 go build -o $(EXE) ./yacsgo.go
-
+	$(ENV) CGO_ENABLED=0 go build -o $(EXE_PARSER) ./yacsgo.go
+	$(ENV) CGO_ENABLED=0 go build -o $(EXE_SERVER) ./server.go
 
 # Build exe file and suppoting files
 build-linux: clean
 	@echo "======================================================================"
 	@echo 'MAKE: build...'
 	mkdir -p $(GOBIN)
-	$(ENV) CGO_ENABLED=0 GOOS=linux go build -o $(EXE) ./yacsgo.go
+	$(ENV) CGO_ENABLED=0 GOOS=linux go build -o $(EXE_PARSER) ./yacsgo.go
+	$(ENV) CGO_ENABLED=0 GOOS=linux go build -o $(EXE_SERVER) ./yacsgo.go
 
 
 # Full tests

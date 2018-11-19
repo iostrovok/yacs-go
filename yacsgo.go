@@ -14,10 +14,10 @@ import (
 	"sync"
 	"time"
 
-	"diff"
-	"helper"
-	"loader"
-	"utils"
+	"github.com/iostrovok/yacs-go/diff"
+	"github.com/iostrovok/yacs-go/helper"
+	"github.com/iostrovok/yacs-go/loader"
+	"github.com/iostrovok/yacs-go/utils"
 )
 
 type container struct {
@@ -60,21 +60,21 @@ func main() {
 
 	var skipResolution, skipInheritance, skipValidation bool
 
-	flag.BoolVar(&con.help, "help", false, "View help message.")
-	flag.StringVar(&con.command, "command", "", "What are we doing?")
-	flag.StringVar(&con.sourceFile, "file", "", "File which will be processed.")
-	flag.StringVar(&con.copmareFile, "copmarefile", "", "File for copmare with 'file'. It's used with 'file' in the same time.")
-	flag.StringVar(&con.outFile, "outfile", "", "File for storing result. It's used with 'file' in the same time.")
+	flag.BoolVar(&con.help, "help", false, `View help message.`)
+	flag.StringVar(&con.command, "command", "", `What are we doing? May by "batchdir", "onefile", "compare"`)
+	flag.StringVar(&con.sourceFile, "file", "", `File which will be processed.`)
+	flag.StringVar(&con.copmareFile, "copmarefile", "", `File for copmare with 'file'. It's used with 'file' in the same time.`)
+	flag.StringVar(&con.outFile, "outfile", "", `File for storing result. It's used with 'file' in the same time.`)
 
-	flag.StringVar(&con.outDIR, "outdir", "", "Dir for storing result. Dir will be created if it doesn't exist.")
-	flag.StringVar(&con.inDIR, "indir", "", "Dir (and all subdirs) which will be processed.")
+	flag.StringVar(&con.outDIR, "outdir", "", `Dir for storing result. Dir will be created if it doesn't exist.`)
+	flag.StringVar(&con.inDIR, "indir", "", `Dir (and all subdirs) which will be processed.`)
 
-	flag.BoolVar(&skipResolution, "skip-resolution", false, "Skip reference resolution step. (default \"false\")")
-	flag.BoolVar(&skipInheritance, "skip-inheritance", false, "Skip inheritance step. (default \"false\")")
-	flag.BoolVar(&skipValidation, "skip-validation", false, "Skip schema validation step. (default \"false\")")
+	flag.BoolVar(&skipResolution, "skip-resolution", false, `Skip reference resolution step. (default \"false\")`)
+	flag.BoolVar(&skipInheritance, "skip-inheritance", false, `Skip inheritance step. (default \"false\")`)
+	flag.BoolVar(&skipValidation, "skip-validation", false, `Skip schema validation step. (default "false")`)
 
-	flag.BoolVar(&con.verbose, "verbose", false, "Shows details about the results of running. (default \"false\")")
-	flag.BoolVar(&con.quiet, "quiet", false, "Silent operation. (default \"false\")")
+	flag.BoolVar(&con.verbose, "verbose", false, `Shows details about the results of running. (default "false")`)
+	flag.BoolVar(&con.quiet, "quiet", false, `Silent operation. (default "false")`)
 
 	flag.Parse()
 
