@@ -3,7 +3,7 @@ package helper
 import (
 	"sync"
 
-	"utils"
+	"github.com/iostrovok/yacs-go/yacs-go/utils"
 )
 
 type uriCacheSt struct {

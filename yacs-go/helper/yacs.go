@@ -1,9 +1,9 @@
 package helper
 
 import (
-	"jsonschema"
-	"myconst"
-	"utils"
+	"github.com/iostrovok/yacs-go/yacs-go/jsonschema"
+	"github.com/iostrovok/yacs-go/yacs-go/myconst"
+	"github.com/iostrovok/yacs-go/yacs-go/utils"
 )
 
 func notNeedResolv(doc interface{}) bool {

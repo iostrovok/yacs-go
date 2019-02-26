@@ -1,8 +1,8 @@
 package helper
 
 import (
-	"myconst"
-	"utils"
+	"github.com/iostrovok/yacs-go/yacs-go/myconst"
+	"github.com/iostrovok/yacs-go/yacs-go/utils"
 )
 
 // getLockNames extracts string keys from interface and convert to map[string]bool
